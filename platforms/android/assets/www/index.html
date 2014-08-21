@@ -19,10 +19,11 @@
 
     <!-- Firebase -->
     <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+    <script> window.Firebase || document.write('<script src="js/firebase.js">\x3C/script>')</script>
 
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    <!-- AngularFire    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script> -->
 
+   <script type="text/javascript" src="js/angularfire.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -31,6 +32,7 @@
     <script src="js/app.js"></script>
     <script src="js/services.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script> window._ || document.write('<script src="js/lodash.compat.min.js">\x3C/script>')</script>
 </head>
 
 <body ng-app="todo" ng-controller="TodoCtrl" class="platform-android platform-cordova platform-webview">

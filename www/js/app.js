@@ -74,13 +74,18 @@ angular.module('todo', ['ionic', 'firebase', 'todo.services'])
     task.title = "";
   };
   $scope.checkOffTask = function(task){
-    var index = _.findIndex($scope.projects, {title: $scope.activeProject.title});
+    try{
+          var index = _.findIndex($scope.projects, {title: $scope.activeProject.title});
     var taskIndex = _.findIndex($scope.projects[index].tasks, {title: task.title});
 
     $scope.projects[index].tasks[taskIndex].checkedOff = !$scope.projects[index].tasks[taskIndex].checkedOff;
 
     $scope.projects[index] = angular.copy($scope.projects[index]);
-    $scope.projects.$save(index);
+    $scope.projects.$save(index).catch(function(err){alert(error);});
+  }catch(e){
+    alert(e);
+  }
+
 
   };
   $scope.editTask = function(task){

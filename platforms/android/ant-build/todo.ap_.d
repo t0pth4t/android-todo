@@ -41,7 +41,10 @@ C:\ionic\android-todo\platforms\android\assets\www\README.md \
 C:\ionic\android-todo\platforms\android\assets\www\templates \
 C:\ionic\android-todo\platforms\android\assets\www\css\style.css \
 C:\ionic\android-todo\platforms\android\assets\www\img\ionic.png \
+C:\ionic\android-todo\platforms\android\assets\www\js\angularfire.min.js \
 C:\ionic\android-todo\platforms\android\assets\www\js\app.js \
+C:\ionic\android-todo\platforms\android\assets\www\js\firebase.js \
+C:\ionic\android-todo\platforms\android\assets\www\js\lodash.compat.min.js \
 C:\ionic\android-todo\platforms\android\assets\www\js\services.js \
 C:\ionic\android-todo\platforms\android\assets\www\lib\ionic \
 C:\ionic\android-todo\platforms\android\assets\www\lib\ionic\css \
