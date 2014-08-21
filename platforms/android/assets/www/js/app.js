@@ -57,9 +57,9 @@ angular.module('todo', ['ionic', 'firebase', 'todo.services'])
       return;
     }
     var index = _.findIndex($scope.projects, {title: $scope.activeProject.title});
-    if(!index)
+    if(index === -1)
       return;
-    if(!project.tasks){
+    if(!$scope.projects[index].tasks){
       $scope.projects[index].tasks = [];
     }
     $scope.projects[index].tasks.push({
@@ -72,6 +72,24 @@ angular.module('todo', ['ionic', 'firebase', 'todo.services'])
     $scope.taskModal.hide();
     task.title = "";
   };
+  $scope.checkOffTask = function(task){
+    var index = _.findIndex($scope.projects, {title: $scope.activeProject.title});
+    var taskIndex = _.findIndex($scope.projects[index].tasks, {title: task.title});
+    $scope.projects[index].tasks[taskIndex].checkedOff = true;
+    $scope.projects[index] = angular.copy($scope.projects[index]);
+    $scope.projects.$save(index);
+
+  };
+  $scope.editTask = function(task){
+    $scope.task = task;
+     $scope.taskModal.show();
+  };
+  $scope.deleteTask = function(task){
+    var index = _.findIndex($scope.projects, {title: $scope.activeProject.title});
+    _.remove($scope.projects[index].tasks, {title: task.title});   
+    $scope.projects[index] = angular.copy($scope.projects[index]);
+    $scope.projects.$save(index);
+  }
 
   $ionicModal.fromTemplateUrl('templates/new-task.html', function(modal) {
     $scope.taskModal = modal;

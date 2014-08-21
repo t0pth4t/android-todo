@@ -1,2 +1,2 @@
-C:\ionic\todo\platforms\android\ant-build\AndroidManifest.xml : \
-C:\ionic\todo\platforms\android\AndroidManifest.xml \
+C:\ionic\android-todo\platforms\android\ant-build\AndroidManifest.xml : \
+C:\ionic\android-todo\platforms\android\AndroidManifest.xml \

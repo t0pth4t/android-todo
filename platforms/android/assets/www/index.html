@@ -53,11 +53,18 @@
                     <ion-item ng-repeat="task in activeProject.tasks">
                         <div class=" item-checkbox">
                             <label class="checkbox">
-                                <input type="checkbox">
+                                <input type="checkbox" ng-click="checkOffTask(task)" ng-checked="task.checkedOff">
                             </label>
                             {{task.title}}
                         </div>
-
+                        <ion-option-button class="button-positive"
+                                           ng-click="editTask(task)">
+                          Edit
+                        </ion-option-button>
+                        <ion-option-button class="button-assertive"
+                                           ng-click="deleteTask(task)">
+                          Delete
+                        </ion-option-button>
                     </ion-item>
                 </ion-list>
             </ion-content>
