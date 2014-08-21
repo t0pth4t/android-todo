@@ -1,7 +1,7 @@
   <div class="modal">
 
     <!-- Modal header bar -->
-    <ion-header-bar class="bar-secondary">
+    <ion-header-bar class="bar-dark">
       <h1 class="title">New Task</h1>
       <button class="button button-clear button-positive" ng-click="closeNewTask()">Cancel</button>
     </ion-header-bar>
@@ -14,9 +14,12 @@
           <label class="item item-input">
             <input type="text" placeholder="What do you want to do?" ng-model="task.title">
           </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Category?" ng-model="task.category">
+          </label>
         </div>
         <div class="padding">
-          <button type="submit" class="button button-block button-positive">Create Task</button>
+          <button type="submit" class="button button-block button-royal">Create Task</button>
         </div>
       </form>
 

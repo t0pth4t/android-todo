@@ -63,7 +63,8 @@ angular.module('todo', ['ionic', 'firebase', 'todo.services'])
       $scope.projects[index].tasks = [];
     }
     $scope.projects[index].tasks.push({
-      title: task.title
+      title: task.title,
+      category: task.category
     });
     $scope.$apply();
     $scope.projects[index] = angular.copy($scope.projects[index]);
@@ -95,6 +96,7 @@ angular.module('todo', ['ionic', 'firebase', 'todo.services'])
   $scope.deleteTask = function(task){
     var index = _.findIndex($scope.projects, {title: $scope.activeProject.title});
     _.remove($scope.projects[index].tasks, {title: task.title});   
+    $scope.$apply();
     $scope.projects[index] = angular.copy($scope.projects[index]);
     $scope.projects.$save(index);
 

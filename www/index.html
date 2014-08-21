@@ -40,7 +40,7 @@
 
         <!-- Center content -->
         <ion-side-menu-content>
-            <ion-header-bar class="bar-dark">
+            <ion-header-bar class="bar-royal">
                 <button class="button button-icon" ng-click="toggleProjects()">
                     <i class="icon ion-navicon"></i>
                 </button>
@@ -52,7 +52,7 @@
             </ion-header-bar>
             <ion-content scroll="false">
                 <ion-list>
-                    <ion-item ng-repeat="task in activeProject.tasks">
+                    <ion-item ng-repeat="task in activeProject.tasks" class='dark'>
                         <div class=" item-checkbox">
                             <label class="checkbox">
                                 <input type="checkbox" ng-click="checkOffTask(task)" ng-checked="task.checkedOff">
