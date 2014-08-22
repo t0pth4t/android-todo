@@ -1,6 +1,16 @@
 angular.module('todo', ['ionic', 'firebase', 'todo.services'])
 
-.controller('TodoCtrl', function($scope, $timeout, $ionicModal, Projects, $ionicSideMenuDelegate, $firebase) {
+.controller('TodoCtrl', function($scope, $timeout, $ionicModal, Projects, $ionicSideMenuDelegate, $firebase, $http) {
+
+  $http({method: 'GET', url: 'http://www.mymealplanr.com/api/recipe'}).
+    success(function(data, status, headers, config) {
+      $scope.recipes = data;
+    }).
+    error(function(data, status, headers, config) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });
+
   var ref = new Firebase("https://learnindatfirebase.firebaseio.com/projects");
 
   $scope.projects = $firebase(ref).$asArray();
